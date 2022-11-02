@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">qwe</button>
+
+  <script>
+    let button = document.querySelector('#btn');
+    button.addEventListener("click" , () => alert ( "1" ));
+    button.removeEventListener("click" , () => alert ( "1" ));
+    button.onclick = () => alert ( 2 );
+
+    //Обидва обродники спрацюють.
+    //addEventListener та onclick це різні обробники то ж їх можна повісити на оин елемент. Але один обробник два рази не можна вішати.
+    //Перший обробник не був видалений. Щоб видалити обробник, необхідно передати саме ту функцію, яка була призначена як обробник. Ці фунції є
+    //анонімними, тож це різні функції взагалі.
+    
+    //Щоб видалити функцію-обробник, потрібно десь зберегти посилання на неї, наприклад:
+    //function handler() {
+    //  alert(1);
+    //}
+
+    //button.addEventListener("click", handler);
+    //button.removeEventListener("click", handler);
+  </script>
+</body>
+</html>
